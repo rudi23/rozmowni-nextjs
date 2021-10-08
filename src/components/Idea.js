@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import useClickTracking from '../hooks/useClickTracking';
 import { events } from '../services/tracking';
 import { routeMap, routeNames } from '../routes';
+import lifelongLearningImage from '../../public/images/lifelong-learning.jpg';
 import Section from './Section';
 import SectionHeading from './SectionHeading';
 
@@ -15,7 +17,7 @@ export default function Idea() {
             <div className="row align-items-center">
                 <div className="col-lg-6 col-md-12">
                     <div className="img-block">
-                        <img src="/images/lifelong-learning.jpg" alt="" className="img-fluid" />
+                        <Image src={lifelongLearningImage} alt="Małgorzata Rudowska przy biurku" placeholder="blur" />
                     </div>
                 </div>
                 <div className="col-lg-6 col-md-12">

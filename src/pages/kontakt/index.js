@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faLinkedin, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
@@ -9,6 +10,7 @@ import PageHeader from '../../components/PageHeader';
 import useClickTracking from '../../hooks/useClickTracking';
 import { events } from '../../services/tracking';
 import { decryptEmail } from '../../utils';
+import contactImage from '../../../public/images/contact.png';
 
 export default function Contact() {
     const trackClick = useClickTracking();
@@ -73,7 +75,7 @@ export default function Contact() {
                     </div>
                     <div className="col-lg-5 col-md-12">
                         <div className="join-img img-block">
-                            <img src="/images/contact.png" alt="" className="img-fluid" />
+                            <Image src={contactImage} alt="Małgorzata Rudowska z książką w rękach" placeholder="blur" />
                         </div>
                     </div>
                 </div>

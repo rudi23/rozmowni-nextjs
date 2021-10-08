@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import useClickTracking from '../hooks/useClickTracking';
 import { events } from '../services/tracking';
 import { routeNames, routeMap } from '../routes';
+import mainImage from '../../public/images/main.jpg';
 import styles from './Banner.module.scss';
 
 export default function Banner() {
@@ -15,7 +17,7 @@ export default function Banner() {
                 <div className="row align-items-center">
                     <div className="col-lg-8 col-xl-8 order-lg-2">
                         <div className="img-block">
-                            <img src="/images/main.jpg" alt="" className="img-fluid" />
+                            <Image src={mainImage} alt="Małgorzata Rudowska przy biurku" placeholder="blur" />
                         </div>
                     </div>
 

@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Section from '../../components/Section';
 import PageHeader from '../../components/PageHeader';
+import aboutUsImage from '../../../public/images/about-us.jpg';
 
 export default function AboutUs() {
     return (
@@ -9,7 +11,11 @@ export default function AboutUs() {
                 <div className="row">
                     <div className="col-lg-6 col-md-12">
                         <div className="img-block">
-                            <img src="/images/about-us.jpg" alt="" className="img-fluid" />
+                            <Image
+                                src={aboutUsImage}
+                                alt="Małe dziecko przeglądające stos książek"
+                                placeholder="blur"
+                            />
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-12 order-md-1">

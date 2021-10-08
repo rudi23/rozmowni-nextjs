@@ -1,5 +1,6 @@
 // import './Header.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faBars } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -9,6 +10,7 @@ import { useWindowWidth } from '@react-hook/window-size';
 import useClickTracking from '../hooks/useClickTracking';
 import { events } from '../services/tracking';
 import { routeMap, routeNames, routeTitles } from '../routes';
+import logoImage from '../../public/images/logo-rozmowni.png';
 
 library.add(faFacebookF);
 library.add(faInstagram);
@@ -198,11 +200,7 @@ export default function Header() {
                     <div className="container pl-3 pr-3">
                         <Link href={routeMap[routeNames.HOME]}>
                             <a className="navbar-brand" onClick={() => trackClick(events.NAVIGATION_CLICK_LOGO)}>
-                                <img
-                                    src="/images/logo-rozmowni.png"
-                                    alt="logo rozmowni.pl"
-                                    className="logo img-fluid"
-                                />
+                                <Image src={logoImage} alt="Logo rozmowni.pl" width="200px" height="51px" />
                             </a>
                         </Link>
                         {width <= 976 ? (

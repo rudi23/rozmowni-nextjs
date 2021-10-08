@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import PageHeader from '../../components/PageHeader';
@@ -8,6 +9,7 @@ import { events } from '../../services/tracking';
 import { routeMap, routeNames } from '../../routes';
 import CourseRequirements from '../../components/CourseRequirements';
 import CourseDetails from '../../components/CourseDetails';
+import courseIndividualImage from '../../../public/images/course-individual.jpg';
 import styles from './Course.module.scss';
 
 export default function CoursesIndividual() {
@@ -168,7 +170,11 @@ export default function CoursesIndividual() {
                         <div className="col-lg-4">
                             <div className="course-sidebar">
                                 <div className="course-single-thumb">
-                                    <img src="/images/course-individual.jpg" alt="" className="img-fluid w-100" />
+                                    <Image
+                                        src={courseIndividualImage}
+                                        alt="Grupa uczniów podczas lekcji angielskiego"
+                                        placeholder="blur"
+                                    />
                                     <div className="course-price-wrapper">
                                         <div className="course-price ml-3">
                                             <h4>

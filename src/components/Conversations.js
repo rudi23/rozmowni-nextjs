@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import useClickTracking from '../hooks/useClickTracking';
 import { events } from '../services/tracking';
 import { routeNames, routeMap } from '../routes';
+import conversationsImage from '../../public/images/conversations.jpg';
 import SectionHeading from './SectionHeading';
 import Section from './Section';
 import Accordion from './Accordion';
@@ -28,7 +30,7 @@ export default function Conversations() {
                 </div>
                 <div className="col-lg-6 col-md-12">
                     <div className="img-block">
-                        <img src="/images/conversations.jpg" alt="" className="img-fluid" />
+                        <Image src={conversationsImage} alt="Konwersacje w grupie" placeholder="blur" />
                     </div>
                 </div>
             </div>
