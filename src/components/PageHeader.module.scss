@@ -1,0 +1,22 @@
+.root {
+  padding: 30px 0;
+  background: #ffefd5;
+  position: relative;
+  text-align: center;
+
+  h1 {
+    color: #07294d;
+    font-size: 46px;
+  }
+
+  ul li {
+    color: #07294d;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  ul li a {
+    color: #07294d;
+    opacity: 0.7;
+  }
+}

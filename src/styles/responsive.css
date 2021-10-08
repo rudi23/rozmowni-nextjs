@@ -1,0 +1,74 @@
+@media (min-width: 1200px) {
+  .feature-item {
+    margin-bottom: 0;
+  }
+  .nav-item.dropdown .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    top: 120%;
+  }
+  .nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  .navbar {
+    padding: 10px 10px;
+  }
+  .navbar-nav .nav-link {
+    padding: 14px 20px;
+    border-right: 0;
+  }
+  .site-navigation {
+    padding: 5px 0;
+  }
+  .section-heading {
+    margin-bottom: 30px;
+  }
+  .nav-tp {
+    margin-bottom: 0;
+    background: #263b5e;
+  }
+  .navbar-toggler {
+    background: #fff;
+    border-radius: 0;
+  }
+  .single-course-details .course-info ul {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-heading h3 {
+    font-size: 32px;
+  }
+  .feature-item.feature-style-2 {
+    margin-bottom: 20px;
+  }
+  .nav-tp {
+    margin-bottom: 0;
+    background: #263b5e;
+  }
+  .navbar-toggler {
+    background: #fff;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-navigation {
+    padding: 10px 10px;
+  }
+  .navbar-nav .nav-link {
+    padding: 14px 20px;
+  }
+}

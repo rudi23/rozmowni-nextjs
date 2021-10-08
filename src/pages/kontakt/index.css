@@ -1,0 +1,70 @@
+.join-section .section-heading {
+  margin-bottom: 30px;
+}
+
+.join-text-block {
+  position: relative;
+  background: #f9f9f9;
+  padding: 25px 30px 15px 95px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.join-text-block i {
+  position: absolute;
+  font-size: 40px;
+  left: 25px;
+  top: 26px;
+  color: #0f8d8c;
+}
+
+.join-text-block h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.about-img2 {
+  padding-right: 30px;
+}
+
+.about-2 p {
+  margin-bottom: 30px;
+}
+
+.about-2 p.no-mb {
+  margin-bottom: 0.5rem;
+}
+
+.contact-item-header {
+  margin-bottom: 10px;
+  color: #0f8d8c;
+}
+
+.contact-socials a {
+  display: inline-block;
+  line-height: 1;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #eee;
+  text-align: center;
+  padding-top: 14px;
+  border-radius: 100%;
+  background: #f9f9f9;
+  color: #07294d;
+  transition: all 0.4s ease;
+
+  /*width: 40px;*/
+  /*height: 40px;*/
+  /*background: #fff;*/
+  /*display: inline-block;*/
+  /*text-align: center;*/
+  /*padding-top: 6px;*/
+  /*font-size: 14px;*/
+  /*color: #222;*/
+  /*border-radius: 100%;*/
+}
+
+.contact-socials a:hover {
+  background: #0f8d8c;
+  color: #fff;
+}

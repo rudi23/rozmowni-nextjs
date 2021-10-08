@@ -1,0 +1,30 @@
+.root {
+  margin-bottom: 30px;
+}
+
+.heading {
+  font-size: 40px;
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #385777;
+  font-weight: 600;
+  letter-spacing: 2px;
+  position: relative;
+  padding-left: 50px;
+  display: inline-block;
+}
+
+.subheading:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #0f8d8c;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
