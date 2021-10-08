@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './Accordion.module.scss';
 
 export default function Accordion({ id = 'accordion', cards }) {
@@ -29,10 +29,10 @@ export default function Accordion({ id = 'accordion', cards }) {
                         <h4>
                             {title}
                             <span className={cx('fa-plus2', styles.plusIcon)}>
-                                <FontAwesomeIcon icon={faPlus} />
+                                <FontAwesomeIcon icon={faChevronDown} />
                             </span>
                             <span className={cx('fa-plus2', styles.minusIcon)}>
-                                <FontAwesomeIcon icon={faMinus} />
+                                <FontAwesomeIcon icon={faChevronUp} />
                             </span>
                         </h4>
                     </button>

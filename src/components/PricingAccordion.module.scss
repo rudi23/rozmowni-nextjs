@@ -1,3 +1,5 @@
+@import '../styles/mixins';
+
 .root {
   .card {
     margin-bottom: 20px;
@@ -30,7 +32,11 @@
         }
 
         .pricing {
-          margin-left: 10px;
+          display: block;
+          @include onDesktop() {
+            display: inline;
+            margin-left: 10px;
+          }
 
           .price {
             color: firebrick;

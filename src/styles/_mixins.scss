@@ -1,0 +1,78 @@
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 980px;
+
+@mixin notOnDesktop() {
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    @content;
+  }
+}
+
+@mixin notOnTablet() {
+  @media screen and (max-width: $breakpoint-mobile - 1) and (min-width: $breakpoint-tablet) {
+    @content;
+  }
+
+  @media print {
+    @content;
+  }
+}
+
+@mixin notOnMobile() {
+  @media screen and (min-width: $breakpoint-mobile) {
+    @content;
+  }
+
+  @media print {
+    @content;
+  }
+}
+
+@mixin notOnPrint() {
+  @media not print {
+    @content;
+  }
+}
+
+@mixin onDesktop() {
+  @media screen and (min-width: $breakpoint-tablet) {
+    @content;
+  }
+
+  @media print {
+    @content;
+  }
+}
+
+@mixin onTablet() {
+  @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet - 1) {
+    @content;
+  }
+}
+
+@mixin onMobile() {
+  @media screen and (max-width: $breakpoint-mobile - 1) {
+    @content;
+  }
+}
+
+@mixin onPrint() {
+  @media print {
+    @content;
+  }
+}
+
+@mixin desktopOnly { @include notOnDesktop { display: none; } }
+
+@mixin tabletOnly { @include notOnTablet { display: none; } }
+
+@mixin mobileOnly { @include notOnMobile { display: none; } }
+
+@mixin printOnly { @include notOnPrint { display: none; } }
+
+@mixin desktopHide { @include onDesktop { display: none; } }
+
+@mixin tabletHide { @include onTablet { display: none; } }
+
+@mixin mobileHide { @include onMobile { display: none; } }
+
+@mixin printHide { @include onPrint { display: none; } }

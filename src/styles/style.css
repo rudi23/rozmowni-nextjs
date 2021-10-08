@@ -214,14 +214,6 @@ Features
   transition: 0.4s;
 }
 
-.feature-item:hover {
-  margin-top: -10px;
-}
-
-.feature-item:hover .feature-icon {
-  color: #0f8d8c;
-}
-
 .feature-icon {
   font-size: 40px;
   float: left;
@@ -246,23 +238,6 @@ Feature Style 2
   background: #fff;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.04);
   border-top: 0;
-}
-
-.feature-item.feature-style-2:hover {
-  border-color: transparent;
-  background: #0f8d8c;
-}
-
-.feature-item.feature-style-2:hover .feature-icon {
-  color: #fff;
-}
-
-.feature-item.feature-style-2:hover h4 {
-  color: #fff;
-}
-
-.feature-item.feature-style-2:hover p {
-  color: #fff;
 }
 
 .feature-item.feature-style-2 .feature-icon {
