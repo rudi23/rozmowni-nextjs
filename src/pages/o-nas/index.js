@@ -15,6 +15,9 @@ export default function AboutUs() {
                                 src={aboutUsImage}
                                 alt="Małe dziecko przeglądające stos książek"
                                 placeholder="blur"
+                                layout="responsive"
+                                sizes="(min-width: 1200px) 540px, (min-width: 992px) 450px, (min-width: 768px) 690px, (min-width: 576px) 510px, calc(100vw-30px)"
+                                quality="75"
                             />
                         </div>
                     </div>

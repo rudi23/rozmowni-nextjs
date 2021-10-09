@@ -200,7 +200,14 @@ export default function Header() {
                     <div className="container pl-3 pr-3">
                         <Link href={routeMap[routeNames.HOME]}>
                             <a className="navbar-brand" onClick={() => trackClick(events.NAVIGATION_CLICK_LOGO)}>
-                                <Image src={logoImage} alt="Logo rozmowni.pl" width="200px" height="51px" />
+                                <Image
+                                    src={logoImage}
+                                    alt="Logo rozmowni.pl"
+                                    width="200px"
+                                    height="51px"
+                                    layout="fixed"
+                                    quality="100"
+                                />
                             </a>
                         </Link>
                         {width <= 976 ? (

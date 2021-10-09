@@ -172,8 +172,11 @@ export default function CoursesIndividual() {
                                 <div className="course-single-thumb">
                                     <Image
                                         src={courseIndividualImage}
-                                        alt="Grupa uczniów podczas lekcji angielskiego"
+                                        alt="Nauczycielka z kawą przy stoliku"
                                         placeholder="blur"
+                                        layout="responsive"
+                                        sizes="(min-width: 1200px) 318px, (min-width: 992px) 258px, (min-width: 768px) 658px, (min-width: 576px) 478px, calc(100vw - 62px)"
+                                        quality="75"
                                     />
                                     <div className="course-price-wrapper">
                                         <div className="course-price ml-3">
