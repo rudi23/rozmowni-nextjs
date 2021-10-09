@@ -40,6 +40,7 @@ export default function Contact() {
                                         target="_blank"
                                         onClick={() => trackClick(events.CONTACT_CLICK_FB_TEXT)}
                                         rel="noreferrer"
+                                        title="Facebook profile page"
                                     >
                                         Facebooku
                                     </a>
@@ -49,6 +50,7 @@ export default function Contact() {
                                         target="_blank"
                                         onClick={() => trackClick(events.CONTACT_CLICK_IG_TEXT)}
                                         rel="noreferrer"
+                                        title="Instagram profile page"
                                     >
                                         Instagramie
                                     </a>{' '}
@@ -58,6 +60,7 @@ export default function Contact() {
                                         target="_blank"
                                         onClick={() => trackClick(events.CONTACT_CLICK_TIKTOK_TEXT)}
                                         rel="noreferrer"
+                                        title="TikTok profile page"
                                     >
                                         TikToku
                                     </a>
@@ -143,9 +146,10 @@ export default function Contact() {
                                                 onClick={() => trackClick(events.CONTACT_CLICK_FB)}
                                                 target="_blank"
                                                 rel="noreferrer"
+                                                title="Facebook profile page"
                                             >
                                                 {' '}
-                                                <FontAwesomeIcon icon={faFacebookF} />
+                                                <FontAwesomeIcon icon={faFacebookF} title="Facebook icon" />
                                             </a>
                                         </li>
                                         <li className="list-inline-item">
@@ -154,9 +158,10 @@ export default function Contact() {
                                                 onClick={() => trackClick(events.CONTACT_CLICK_IG)}
                                                 target="_blank"
                                                 rel="noreferrer"
+                                                title="Instagram profile page"
                                             >
                                                 {' '}
-                                                <FontAwesomeIcon icon={faInstagram} />
+                                                <FontAwesomeIcon icon={faInstagram} title="Instagram icon" />
                                             </a>
                                         </li>
                                         <li className="list-inline-item">
@@ -165,9 +170,10 @@ export default function Contact() {
                                                 onClick={() => trackClick(events.CONTACT_CLICK_TIKTOK)}
                                                 target="_blank"
                                                 rel="noreferrer"
+                                                title="TikTok profile page"
                                             >
                                                 {' '}
-                                                <FontAwesomeIcon icon={faTiktok} />
+                                                <FontAwesomeIcon icon={faTiktok} title="TikTok icon" />
                                             </a>
                                         </li>
                                         <li className="list-inline-item">
@@ -176,9 +182,10 @@ export default function Contact() {
                                                 onClick={() => trackClick(events.CONTACT_CLICK_LINKEDIN)}
                                                 target="_blank"
                                                 rel="noreferrer"
+                                                title="Linkedin profile page"
                                             >
                                                 {' '}
-                                                <FontAwesomeIcon icon={faLinkedin} />
+                                                <FontAwesomeIcon icon={faLinkedin} title="Linkedin icon" />
                                             </a>
                                         </li>
                                     </ul>

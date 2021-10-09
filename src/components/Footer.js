@@ -28,9 +28,10 @@ export default function Footer() {
                                         target="_blank"
                                         rel="noreferrer"
                                         onClick={() => trackClick(events.FOOTER_CLICK_FB)}
+                                        title="Facebook profile page"
                                     >
                                         {' '}
-                                        <FontAwesomeIcon icon={faFacebookF} />
+                                        <FontAwesomeIcon icon={faFacebookF} title="Facebook icon" />
                                     </a>
                                 </li>
                                 <li className="list-inline-item">
@@ -39,9 +40,10 @@ export default function Footer() {
                                         target="_blank"
                                         rel="noreferrer"
                                         onClick={() => trackClick(events.FOOTER_CLICK_IG)}
+                                        title="Instagram profile page"
                                     >
                                         {' '}
-                                        <FontAwesomeIcon icon={faInstagram} />
+                                        <FontAwesomeIcon icon={faInstagram} title="Instagram icon" />
                                     </a>
                                 </li>
                                 <li className="list-inline-item">
@@ -50,9 +52,10 @@ export default function Footer() {
                                         target="_blank"
                                         rel="noreferrer"
                                         onClick={() => trackClick(events.FOOTER_CLICK_TIKTOK)}
+                                        title="TikTok profile page"
                                     >
                                         {' '}
-                                        <FontAwesomeIcon icon={faTiktok} />
+                                        <FontAwesomeIcon icon={faTiktok} title="TikTok icon" />
                                     </a>
                                 </li>
                                 <li className="list-inline-item">
@@ -61,9 +64,10 @@ export default function Footer() {
                                         target="_blank"
                                         rel="noreferrer"
                                         onClick={() => trackClick(events.FOOTER_CLICK_LINKEDIN)}
+                                        title="Linkedin profile page"
                                     >
                                         {' '}
-                                        <FontAwesomeIcon icon={faLinkedin} />
+                                        <FontAwesomeIcon icon={faLinkedin} title="Linkedin icon" />
                                     </a>
                                 </li>
                             </ul>

@@ -199,7 +199,11 @@ export default function Header() {
                 <nav className="navbar navbar-expand-lg">
                     <div className="container pl-3 pr-3">
                         <Link href={routeMap[routeNames.HOME]}>
-                            <a className="navbar-brand" onClick={() => trackClick(events.NAVIGATION_CLICK_LOGO)}>
+                            <a
+                                className="navbar-brand"
+                                onClick={() => trackClick(events.NAVIGATION_CLICK_LOGO)}
+                                title="Strona główna"
+                            >
                                 <Image
                                     src={logoImage}
                                     alt="Logo rozmowni.pl"
@@ -222,7 +226,11 @@ export default function Header() {
 
                         <div className="header-contact-phone d-none d-lg-block">
                             <span>Tel.:</span>&nbsp;
-                            <a href="tel:+48506262227" onClick={() => trackClick(events.NAVIGATION_CLICK_PHONE)}>
+                            <a
+                                href="tel:+48506262227"
+                                onClick={() => trackClick(events.NAVIGATION_CLICK_PHONE)}
+                                title="Zadzwoń"
+                            >
                                 506 262 227
                             </a>
                         </div>
@@ -234,9 +242,10 @@ export default function Header() {
                                     onClick={() => trackClick(events.NAVIGATION_CLICK_FB)}
                                     target="_blank"
                                     rel="noreferrer"
+                                    title="Facebook profile page"
                                 >
                                     <span className="icon">
-                                        <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+                                        <FontAwesomeIcon icon={['fab', 'facebook-f']} title="Facebook icon" />
                                     </span>
                                 </a>
                             </li>
@@ -246,9 +255,10 @@ export default function Header() {
                                     onClick={() => trackClick(events.NAVIGATION_CLICK_IG)}
                                     target="_blank"
                                     rel="noreferrer"
+                                    title="Instagram profile page"
                                 >
                                     <span className="icon">
-                                        <FontAwesomeIcon icon={['fab', 'instagram']} />
+                                        <FontAwesomeIcon icon={['fab', 'instagram']} title="Instagram icon" />
                                     </span>
                                 </a>
                             </li>
@@ -258,9 +268,10 @@ export default function Header() {
                                     onClick={() => trackClick(events.NAVIGATION_CLICK_TIKTOK)}
                                     target="_blank"
                                     rel="noreferrer"
+                                    title="TikTok profile page"
                                 >
                                     <span className="icon">
-                                        <FontAwesomeIcon icon={['fab', 'tiktok']} />
+                                        <FontAwesomeIcon icon={['fab', 'tiktok']} title="TikTok icon" />
                                     </span>
                                 </a>
                             </li>
