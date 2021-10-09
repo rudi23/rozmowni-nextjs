@@ -1,6 +1,6 @@
 /**
- * bicon v1.0.0 - 
- * @link 
+ * bicon v1.0.0 -
+ * @link
  * @copyright 2016-2017 ThemeBucket
  * @license MIT
  */
@@ -9,7 +9,8 @@
 {
     font-family: 'bicon';
     font-weight: normal;
-    font-style: normal; 
+    font-style: normal;
+    font-display: swap;
 
     src: url('../fonts/bicon.eot?b8vo7z');
     src: url('../fonts/bicon.eot?b8vo7z#iefix') format('embedded-opentype'), url('../fonts/bicon.ttf?b8vo7z') format('truetype'), url('../fonts/bicon.woff?b8vo7z') format('woff'), url('../fonts/bicon.svg?b8vo7z#bicon') format('svg');
