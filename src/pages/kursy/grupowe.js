@@ -151,6 +151,9 @@ export default function CoursesGroup() {
                                         src={courseGroupImage}
                                         alt="Grupa uczniów podczas lekcji angielskiego"
                                         placeholder="blur"
+                                        layout="responsive"
+                                        sizes="(min-width: 1200px) 318px, (min-width: 992px) 258px, (min-width: 768px) 658px, (min-width: 576px) 478px, calc(100vw - 62px)"
+                                        quality="75"
                                     />
                                     <div className="course-price-wrapper">
                                         <div className="course-price ml-3">

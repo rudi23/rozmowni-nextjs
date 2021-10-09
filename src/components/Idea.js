@@ -17,7 +17,14 @@ export default function Idea() {
             <div className="row align-items-center">
                 <div className="col-lg-6 col-md-12">
                     <div className="img-block">
-                        <Image src={lifelongLearningImage} alt="Małgorzata Rudowska przy biurku" placeholder="blur" />
+                        <Image
+                            src={lifelongLearningImage}
+                            alt="Małgorzata Rudowska przy biurku"
+                            placeholder="blur"
+                            layout="responsive"
+                            sizes="(min-width: 1200px) 540px, (min-width: 992px) 450px, (min-width: 768px) 690px, (min-width: 576px) 510px, calc(100vw-30px)"
+                            quality="75"
+                        />
                     </div>
                 </div>
                 <div className="col-lg-6 col-md-12">
