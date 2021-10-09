@@ -16,7 +16,7 @@ export default function Footer() {
                 <div className="row">
                     <div className="col-lg-4 mr-auto col-sm-6 col-md-6">
                         <div className="widget footer-widget mb-5 mb-lg-0">
-                            <h5 className="widget-title">O nas</h5>
+                            <div className="widget-title">O nas</div>
                             <p className="mt-3">
                                 Szkoła językowa rozmowni.pl jest dla Ciebie jeśli chcesz nie tylko podnosić swój poziom
                                 angielskiego, ale także rozmawiać swobodnie po angielsku na tematy ważne dla Ciebie.
@@ -72,7 +72,7 @@ export default function Footer() {
 
                     <div className="col-lg-2 col-sm-6 col-md-6">
                         <div className="footer-widget mb-5 mb-lg-0">
-                            <h5 className="widget-title">Rozmowni.pl</h5>
+                            <div className="widget-title">Rozmowni.pl</div>
                             <ul className="list-unstyled footer-links">
                                 <li>
                                     <Link href={routeMap[routeNames.WHY_US]}>
@@ -146,7 +146,7 @@ export default function Footer() {
                     </div>
                     <div className="col-lg-2 col-sm-6 col-md-6">
                         <div className="footer-widget mb-5 mb-lg-0">
-                            <h5 className="widget-title">Kursy</h5>
+                            <div className="widget-title">Kursy</div>
                             <ul className="list-unstyled footer-links">
                                 <li>
                                     <Link href={routeMap[routeNames.INDIVIDUAL_COURSE]}>
@@ -209,7 +209,7 @@ export default function Footer() {
                     </div>
                     <div className="col-lg-3 col-sm-6 col-md-6">
                         <div className="footer-widget footer-contact mb-5 mb-lg-0">
-                            <h5 className="widget-title">Kontakt</h5>
+                            <div className="widget-title">Kontakt</div>
 
                             <ul className="list-unstyled">
                                 <li>
