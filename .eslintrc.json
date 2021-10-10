@@ -15,19 +15,6 @@
         "newlines-between": "never"
       }
     ],
-    "max-len": [
-      "error",
-      120,
-      {
-        "ignoreComments": true,
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreTrailingComments": true,
-        "ignoreUrls": true,
-        "tabWidth": 4
-      }
-    ],
     "no-irregular-whitespace": [
       "error",
       {
