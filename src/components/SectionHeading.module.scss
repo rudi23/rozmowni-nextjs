@@ -1,9 +1,15 @@
+@import '../styles/mixins';
+
 .root {
   margin-bottom: 30px;
 }
 
 .heading {
-  font-size: 40px;
+  font-size: 32px;
+
+  @include onTabletAndDesktop() {
+    font-size: 40px;
+  }
 }
 
 .subheading {

@@ -49,6 +49,16 @@ $breakpoint-tablet: 980px;
   }
 }
 
+@mixin onTabletAndDesktop() {
+  @media screen and (min-width: $breakpoint-mobile) {
+    @content;
+  }
+
+  @media print {
+    @content;
+  }
+}
+
 @mixin onMobile() {
   @media screen and (max-width: $breakpoint-mobile - 1) {
     @content;
