@@ -13,7 +13,7 @@ export default function Idea() {
     const trackClick = useClickTracking();
 
     return (
-        <Section background="gray">
+        <Section>
             <div className="row align-items-center">
                 <div className="col-lg-6 col-md-12">
                     <div className="img-block">

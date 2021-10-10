@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Section from '../../components/Section';
 import PageHeader from '../../components/PageHeader';
+import Opinions from '../../components/Opinions';
 import aboutUsImage from '../../../public/images/about-us.jpg';
 
 export default function AboutUs() {
@@ -49,6 +50,7 @@ export default function AboutUs() {
                     </div>
                 </div>
             </Section>
+            <Opinions />
         </>
     );
 }

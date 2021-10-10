@@ -7,6 +7,8 @@ import '../styles/bootstrap.scss';
 import '../styles/style.css';
 import '../styles/responsive.css';
 import '../pages/kontakt/index.css';
+import 'react-multi-carousel/lib/styles.css';
+import '../styles/carousel.css';
 import '../components/Footer.css';
 import '../components/Header.scss';
 import '../../public/libs/bicon/css/bicon.min.css';
