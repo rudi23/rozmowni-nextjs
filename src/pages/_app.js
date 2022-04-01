@@ -13,6 +13,7 @@ import '../components/Footer.css';
 import '../components/Header.scss';
 import '../../public/libs/bicon/css/bicon.min.css';
 import '../../public/fonts/fonts.css';
+import '../../public/fonts/fonts2.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { CookieConsent } from '../components/CookieConsent';
