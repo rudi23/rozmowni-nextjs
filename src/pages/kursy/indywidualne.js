@@ -206,7 +206,7 @@ export default function CoursesIndividual() {
                                         },
                                         {
                                             title: 'Koszt:',
-                                            content: '90 zł',
+                                            content: '95 zł',
                                             icon: 'money',
                                         },
                                         {

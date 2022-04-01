@@ -17,7 +17,7 @@ export default function Pricing() {
                             cards={[
                                 {
                                     title: 'Lekcje indywidualne:',
-                                    price: '90 zł',
+                                    price: '95 zł',
                                     priceInfo: 'za 45 min',
                                     id: '1',
                                     items: [
