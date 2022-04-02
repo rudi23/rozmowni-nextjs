@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
-    "prettier": "prettier --write"
+    "prettier": "prettier --write",
+    "test": "echo 'No tests'"
   },
   "lint-staged": {
     "*.js": [
