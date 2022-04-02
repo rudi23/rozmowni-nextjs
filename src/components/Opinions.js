@@ -141,7 +141,7 @@ export default function Opinions() {
 
     function renderOpinion({ author, content }) {
         return (
-            <div className={styles.root}>
+            <div className={styles.root} key={author}>
                 <div className={styles.content}>
                     <div className={styles.quote}>
                         <i className="bi bi-quote" />

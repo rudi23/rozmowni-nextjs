@@ -149,7 +149,7 @@ export default function Contact() {
                                                 title="Facebook profile page"
                                             >
                                                 {' '}
-                                                <FontAwesomeIcon icon={faFacebookF} title="Facebook icon" />
+                                                <FontAwesomeIcon icon={faFacebookF} />
                                             </a>
                                         </li>
                                         <li className="list-inline-item">
@@ -161,7 +161,7 @@ export default function Contact() {
                                                 title="Instagram profile page"
                                             >
                                                 {' '}
-                                                <FontAwesomeIcon icon={faInstagram} title="Instagram icon" />
+                                                <FontAwesomeIcon icon={faInstagram} />
                                             </a>
                                         </li>
                                         <li className="list-inline-item">
@@ -173,7 +173,7 @@ export default function Contact() {
                                                 title="TikTok profile page"
                                             >
                                                 {' '}
-                                                <FontAwesomeIcon icon={faTiktok} title="TikTok icon" />
+                                                <FontAwesomeIcon icon={faTiktok} />
                                             </a>
                                         </li>
                                         <li className="list-inline-item">
@@ -185,7 +185,7 @@ export default function Contact() {
                                                 title="Linkedin profile page"
                                             >
                                                 {' '}
-                                                <FontAwesomeIcon icon={faLinkedin} title="Linkedin icon" />
+                                                <FontAwesomeIcon icon={faLinkedin} />
                                             </a>
                                         </li>
                                     </ul>
