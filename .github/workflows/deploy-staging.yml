@@ -26,7 +26,7 @@ jobs:
       - name: Set application directory as env variable
         run: echo "APP_DIR=/home/rozmowni/rails/test" >> $GITHUB_ENV
       - name: Create app archive
-        run: tar --exclude="./.idea" --exclude="./.git" --exclude="./.github" -czf app_${{ env.RELEASE }}.tar.gz * .??*
+        run: tar --exclude=".git" --exclude=".github" -zcvf app_${{ env.RELEASE }}.tar.gz * .??*
       - name: Upload app archive to server
         run: rsync -av ./app_${{ env.RELEASE }}.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/rozmowni
       - name: Switch app on server
@@ -39,12 +39,10 @@ jobs:
           script: | 
             mkdir -p ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
             mv ~/app_${{ env.RELEASE }}.tar.gz ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
-            ls -al ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
             tar -xf ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz -C ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
-            ls -al ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
             rm ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
             rm ${{ env.APP_DIR }}/current
             ln -s ${{ env.APP_DIR }}/releases/${{ env.RELEASE }} ${{ env.APP_DIR }}/current
-            ls -al ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
-            ls -al ${{ env.APP_DIR }}
-            
+#            rm -rfv !($(ls ${{ env.APP_DIR }}/releases-r | head -2 | tr '\n' '|'))
+            ls ${{ env.APP_DIR }}/releases -r | head -2 | tr '\n' '|'
+
