@@ -43,5 +43,6 @@ jobs:
             rm ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
             rm ${{ env.APP_DIR }}/current
             ln -s ${{ env.APP_DIR }}/releases/${{ env.RELEASE }} ${{ env.APP_DIR }}/current
-            ls ${{ env.APP_DIR }}/releases -r | head -2 | tr '\n' '|'
+            shopt -s extglob
+            rm -rfv ${{ env.APP_DIR }}/releases !($(ls ${{ env.APP_DIR }}/releases -r | head -2 | tr '\n' '|'))
 
