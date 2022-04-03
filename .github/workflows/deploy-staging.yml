@@ -28,7 +28,7 @@ jobs:
       - name: Create app archive
         run: tar --exclude="./.idea" --exclude="./.git" --exclude="./.github" -czf app_${{ env.RELEASE }}.tar.gz * .??*
       - name: Upload app archive to server
-        run: rsync -av ./app_${{ env.RELEASE }}.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+        run: rsync -av ./app_${{ env.RELEASE }}.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/rozmowni
       - name: Switch app on server
         uses: appleboy/ssh-action@master
         with:
