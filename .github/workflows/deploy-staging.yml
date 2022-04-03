@@ -21,10 +21,14 @@ jobs:
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
       - name: Adding known hosts
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      - name: Set release date as env variable
+        run: echo "RELEASE=$(date +'%Y%m%d%H%M')" >> $GITHUB_ENV
+      - name: Set application directory as env variable
+        run: echo "APP_DIR=/home/rozmowni/rails/test" >> $GITHUB_ENV
       - name: Create app archive
-        run: tar --exclude="./.idea" --exclude="./.git" --exclude="./.github" -czf app.tar.gz * .??*
+        run: tar --exclude="./.idea" --exclude="./.git" --exclude="./.github" -czf app_${{ env.RELEASE }}.tar.gz * .??*
       - name: Upload app archive to server
-        run: rsync -av ./app.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/rails/test
+        run: rsync -av ./app_${{ env.RELEASE }}.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.APP_DIR }}
       - name: Switch app on server
         uses: appleboy/ssh-action@master
         with:
@@ -33,5 +37,12 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: | 
-            whoami
-            ls -al
+            mkdir -p ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
+            mv ${{ env.APP_DIR }}/app_${{ env.RELEASE }}.tar.gz ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
+            tar -xf ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
+            rm ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
+            rm ${{ env.APP_DIR }}/current
+            ln -s ${{ env.APP_DIR }}/releases/${{ env.RELEASE }} ${{ env.APP_DIR }}/current
+            ls -al ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
+            ls -al ${{ env.APP_DIR }}
+            
