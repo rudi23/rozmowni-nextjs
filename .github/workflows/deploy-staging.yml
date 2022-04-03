@@ -28,7 +28,7 @@ jobs:
       - name: Create app archive
         run: tar --exclude="./.idea" --exclude="./.git" --exclude="./.github" -czf app_${{ env.RELEASE }}.tar.gz * .??*
       - name: Upload app archive to server
-        run: rsync -av ./app_${{ env.RELEASE }}.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.APP_DIR }}
+        run: rsync -av ./app_${{ env.RELEASE }}.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
       - name: Switch app on server
         uses: appleboy/ssh-action@master
         with:
@@ -38,8 +38,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: | 
             mkdir -p ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
-            mv ${{ env.APP_DIR }}/app_${{ env.RELEASE }}.tar.gz ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
+            mv /~/app_${{ env.RELEASE }}.tar.gz ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
+            ls -al ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
             tar -xf ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
+            ls -al ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
             rm ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
             rm ${{ env.APP_DIR }}/current
             ln -s ${{ env.APP_DIR }}/releases/${{ env.RELEASE }} ${{ env.APP_DIR }}/current
