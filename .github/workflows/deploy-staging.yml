@@ -10,12 +10,6 @@ jobs:
     name: Deploy ${{ matrix.node-version }}
     steps:
       - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-bundle-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bundle-
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
