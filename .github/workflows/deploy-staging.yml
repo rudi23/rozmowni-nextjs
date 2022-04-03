@@ -13,7 +13,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-#      - run: npm ci --quiet
+      - name: Install dependencies
+        run: npm ci --quiet
+      - name: Build project
+        run: npm run build
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -24,7 +27,7 @@ jobs:
       - name: Set release date as env variable
         run: echo "RELEASE=$(date +'%Y%m%d%H%M')" >> $GITHUB_ENV
       - name: Set application directory as env variable
-        run: echo "APP_DIR=/home/rozmowni/rails/test" >> $GITHUB_ENV
+        run: echo "APP_DIR=/home/rozmowni/rails/staging" >> $GITHUB_ENV
       - name: Create app archive
         run: tar --exclude=".git" --exclude=".github" -zcvf app_${{ env.RELEASE }}.tar.gz * .??*
       - name: Upload app archive to server
@@ -44,5 +47,5 @@ jobs:
             rm ${{ env.APP_DIR }}/current
             ln -s ${{ env.APP_DIR }}/releases/${{ env.RELEASE }} ${{ env.APP_DIR }}/current
             shopt -s extglob
-            rm -rfv ${{ env.APP_DIR }}/releases !($(ls ${{ env.APP_DIR }}/releases -r | head -2 | tr '\n' '|'))
+            cd ${{ env.APP_DIR }}/releases && rm -rfv !($(ls ${{ env.APP_DIR }}/releases -r | head -2 | tr '\n' '|'))
 
