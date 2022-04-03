@@ -38,7 +38,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: | 
             mkdir -p ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
-            mv /~/app_${{ env.RELEASE }}.tar.gz ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
+            mv ~/app_${{ env.RELEASE }}.tar.gz ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
             ls -al ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
             tar -xf ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
             ls -al ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
