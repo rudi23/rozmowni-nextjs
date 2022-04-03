@@ -43,6 +43,5 @@ jobs:
             rm ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
             rm ${{ env.APP_DIR }}/current
             ln -s ${{ env.APP_DIR }}/releases/${{ env.RELEASE }} ${{ env.APP_DIR }}/current
-#            rm -rfv !($(ls ${{ env.APP_DIR }}/releases-r | head -2 | tr '\n' '|'))
             ls ${{ env.APP_DIR }}/releases -r | head -2 | tr '\n' '|'
 
