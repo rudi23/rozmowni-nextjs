@@ -1,5 +1,9 @@
-name: "Deploy staging"
-on: [pull_request]
+name: "Deploy production"
+on:
+  push:
+    branches:
+      - 'main'
+      - 'master'
 
 jobs:
   deploy:
@@ -29,9 +33,9 @@ jobs:
       - name: Set application directory as env variable
         run: echo "APP_DIR=/home/rozmowni/rails" >> $GITHUB_ENV
       - name: Set application releases directory as env variable
-        run: echo "RELEASES_DIR=/home/rozmowni/rails/rozmowni_staging_releases" >> $GITHUB_ENV
+        run: echo "RELEASES_DIR=/home/rozmowni/rails/rozmowni_releases" >> $GITHUB_ENV
       - name: Set symlink name as env variable
-        run: echo "SYMLINK_NAME=rozmowni_staging" >> $GITHUB_ENV
+        run: echo "SYMLINK_NAME=rozmowni" >> $GITHUB_ENV
       - name: Create app archive
         run: tar --exclude=".git" --exclude=".github" -zcf app_${{ env.RELEASE }}.tar.gz * .??*
       - name: Upload app archive to server
