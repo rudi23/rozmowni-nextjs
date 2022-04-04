@@ -56,5 +56,6 @@ jobs:
             ln -s ${{ env.RELEASES_DIR }}/${{ env.RELEASE }} ${{ env.APP_DIR }}/${{ env.SYMLINK_NAME }}
             shopt -s extglob
             cd ${{ env.RELEASES_DIR }} && rm -rfv !($(ls ${{ env.RELEASES_DIR }} -r | head -2 | tr '\n' '|'))
+            mkdir -p ${{ env.RELEASES_DIR }}/${{ env.RELEASE }}/tmp
             touch ${{ env.RELEASES_DIR }}/${{ env.RELEASE }}/tmp/restart.txt
 
