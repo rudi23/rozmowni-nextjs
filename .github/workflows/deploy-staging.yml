@@ -27,9 +27,13 @@ jobs:
       - name: Set release date as env variable
         run: echo "RELEASE=$(date +'%Y%m%d%H%M')" >> $GITHUB_ENV
       - name: Set application directory as env variable
-        run: echo "APP_DIR=/home/rozmowni/rails/staging" >> $GITHUB_ENV
+        run: echo "APP_DIR=/home/rozmowni/rails" >> $GITHUB_ENV
+      - name: Set application releases directory as env variable
+        run: echo "RELEASES_DIR=/home/rozmowni/rails/rozmowni_demo_releases" >> $GITHUB_ENV
+      - name: Set symlink name as env variable
+        run: echo "SYMLINK_NAME=rozmowni_demo" >> $GITHUB_ENV
       - name: Create app archive
-        run: tar --exclude=".git" --exclude=".github" -zcvf app_${{ env.RELEASE }}.tar.gz * .??*
+        run: tar --exclude=".git" --exclude=".github" -zcf app_${{ env.RELEASE }}.tar.gz * .??*
       - name: Upload app archive to server
         run: rsync -av ./app_${{ env.RELEASE }}.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/rozmowni
       - name: Switch app on server
@@ -40,12 +44,12 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: | 
-            mkdir -p ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
-            mv ~/app_${{ env.RELEASE }}.tar.gz ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
-            tar -xf ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz -C ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}
-            rm ${{ env.APP_DIR }}/releases/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
-            rm ${{ env.APP_DIR }}/current
-            ln -s ${{ env.APP_DIR }}/releases/${{ env.RELEASE }} ${{ env.APP_DIR }}/current
+            mkdir -p ${{ env.RELEASES_DIR }}/${{ env.RELEASE }}
+            mv ~/app_${{ env.RELEASE }}.tar.gz ${{ env.RELEASES_DIR }}/${{ env.RELEASE }}
+            tar -xf ${{ env.RELEASES_DIR }}/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz -C ${{ env.RELEASES_DIR }}/${{ env.RELEASE }}
+            rm ${{ env.RELEASES_DIR }}/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
+            rm ${{ env.APP_DIR }}/${{ env.SYMLINK_NAME }}
+            ln -s ${{ env.RELEASES_DIR }}/${{ env.RELEASE }} ${{ env.APP_DIR }}/${{ env.SYMLINK_NAME }}
             shopt -s extglob
-            cd ${{ env.APP_DIR }}/releases && rm -rfv !($(ls ${{ env.APP_DIR }}/releases -r | head -2 | tr '\n' '|'))
+            cd ${{ env.RELEASES_DIR }} && rm -rfv !($(ls ${{ env.RELEASES_DIR }} -r | head -2 | tr '\n' '|'))
 
