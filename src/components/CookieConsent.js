@@ -21,7 +21,7 @@ export function CookieConsent() {
                 background: '#0f8d8c',
                 fontWeight: '500',
                 borderRadius: '5px',
-                fontFamily: '"Filson Pro", sans-serif',
+                fontFamily: 'Montserrat, sans-serif',
                 padding: '8px 15px',
             }}
             expires={90}
