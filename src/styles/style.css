@@ -345,6 +345,11 @@ Feature Style 2
   margin-right: 10px;
 }
 
+.course-sidebar .course-widget ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 .course-sidebar .course-widget ul li {
   line-height: 45px;
   color: #222;
@@ -525,6 +530,7 @@ COURse Single Details
   -moz-column-gap: 30px;
   column-gap: 30px;
   margin: 0;
+  padding-left: 0;
 }
 
 .single-course-details .course-info ul li {
