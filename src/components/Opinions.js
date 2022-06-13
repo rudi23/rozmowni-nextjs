@@ -159,6 +159,7 @@ export default function Opinions() {
             <div className="row justify-content-center testimonials">
                 <div className="col-lg-12">
                     <Carousel
+                        autoPlay={false}
                         responsive={responsive}
                         swipeable={true}
                         draggable={false}
