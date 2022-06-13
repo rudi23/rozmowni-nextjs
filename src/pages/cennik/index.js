@@ -22,8 +22,27 @@ export default function Pricing() {
                                     id: '1',
                                     items: [
                                         'zajęcia odbywają się 1 lub 2 razy w tygodniu',
-                                        'płatność miesięczna, dokonywana z góry',
-                                        'podczas zajęć indywidualnych',
+                                        'płatność miesięczna, dokonywana z góry podczas zajęć indywidualnych',
+                                    ],
+                                },
+                            ]}
+                        />
+
+                        <h2 className="pb-4">Intensywne kursy wakacyjne</h2>
+
+                        <PricingAccordion
+                            id="pricing"
+                            cards={[
+                                {
+                                    title: 'Kurs w grupie 4-5 osób:',
+                                    price: '840 zł',
+                                    priceInfo: 'za miesiąc',
+                                    id: '1',
+                                    items: [
+                                        'kurs trwa cały lipiec',
+                                        'obejmuje 24 godziny lekcyjne',
+                                        'zajęcia odbywają się 3 razy w tygodniu po 2 godziny lekcyjne (90 minut)',
+                                        'liczba osób w grupie: 4-5',
                                     ],
                                 },
                             ]}
