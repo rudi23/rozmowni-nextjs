@@ -24,8 +24,6 @@ export default function HolidayCourse() {
                     <div className="row">
                         <div className="col-lg-8">
                             <div className="course-single-header">
-                                <h2 className="single-course-title">Wakacje z angielskim</h2>
-
                                 <div className="img-block">
                                     <Link href={routeMap[routeNames.CONTACT]}>
                                         <a onClick={() => trackClick(events.HOLIDAY_COURSE_CLICK_BANNER)}>
