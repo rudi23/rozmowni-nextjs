@@ -4,7 +4,7 @@ on: [pull_request]
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '(deps)')"
+    if: "!contains(github.event.head_commit.message, 'deps')"
     strategy:
       matrix:
         node-version: [16.13.0]
