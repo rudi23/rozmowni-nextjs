@@ -1740,10 +1740,10 @@ react-ga4@1.4.1:
   resolved "https://registry.npmjs.org/react-ga4/-/react-ga4-1.4.1.tgz"
   integrity sha512-ioBMEIxd4ePw4YtaloTUgqhQGqz5ebDdC4slEpLgy2sLx1LuZBC9iYCwDymTXzcntw6K1dHX183ulP32nNdG7w==
 
-react-google-recaptcha-v3@1.9.7:
-  version "1.9.7"
-  resolved "https://registry.npmjs.org/react-google-recaptcha-v3/-/react-google-recaptcha-v3-1.9.7.tgz"
-  integrity sha512-LgHTuPUE86jGOtmMYMUWEYux8n7M2ZNj5GHct//DlXWZGyLIgFfLbvxA3UlgrG+tSu2pgw2mqXtYdPxaldqhWQ==
+react-google-recaptcha-v3@1.9.8:
+  version "1.9.8"
+  resolved "https://registry.npmjs.org/react-google-recaptcha-v3/-/react-google-recaptcha-v3-1.9.8.tgz"
+  integrity sha512-1AuwvNjcGxMQTBMgsu4XI+Tzh/9En8xdVE/OS48l2Z8VsaCtb8eLh2RcMv/bxgt+UbHzPfQ2JynPBxB1+hYkJA==
   dependencies:
     hoist-non-react-statics "^3.3.2"
 
