@@ -1,14 +1,14 @@
-name: "Deploy staging"
-on: [pull_request]
+name: "Deploy to staging"
+on:
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'deps')"
     strategy:
       matrix:
         node-version: [16.13.0]
-    name: Deploy ${{ matrix.node-version }}
+    name: Deploy to staging with Node ${{ matrix.node-version }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -51,7 +51,7 @@ jobs:
             rm ${{ env.RELEASES_DIR }}/${{ env.RELEASE }}/app_${{ env.RELEASE }}.tar.gz
             rm ${{ env.APP_DIR }}/${{ env.SYMLINK_NAME }}
             ln -s ${{ env.RELEASES_DIR }}/${{ env.RELEASE }} ${{ env.APP_DIR }}/${{ env.SYMLINK_NAME }}
-            ln -s ${{ env.APP_DIR }}/shared ${{ env.APP_DIR }}/${{ env.SYMLINK_NAME }}/public/shared
+            ln -s ${{ env.APP_DIR }}/shared ${{ env.APP_DIR }}/${{ env.SYMLINK_NAME }}/public
             shopt -s extglob
             cd ${{ env.RELEASES_DIR }} && rm -rf !($(ls ${{ env.RELEASES_DIR }} -r | head -2 | tr '\n' '|'))
             mkdir -p ${{ env.RELEASES_DIR }}/${{ env.RELEASE }}/tmp
